@@ -1,0 +1,36 @@
+/* 你原本的 CSS 都保留在這裡 */
+
+/* ✅ 新增 logo 動畫與互動效果 */
+.animated-logo {
+  width: 150px;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: logoFadeIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.animated-logo:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+.animated-logo:active {
+  animation: blink 0.3s ease-in-out;
+}
+
+@keyframes logoFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(2); }
+  100% { filter: brightness(1); }
+}
